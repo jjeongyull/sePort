@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+     <!-- 반응형 적용을 위한 설정-->
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <meta name="description" content="메인탬플릿02">
+ 
+     <!-- 모바일 웹 자동 링크 제거 -> 전화걸기 방지 -->
+     <meta content="telephone=no" name="format-detection">
+ 
+     <!-- 모바일 처리 : https://jeongah-story.tistory.com/202 , https://developers.google.com/web/fundamentals/design-and-ux/browser-customization?hl=ko 참고 -->
+     <meta name="apple-mobile-web-app-title" content="메인탬플릿02">
+     <link rel="apple-touch-icon" href="#">
+     <meta name="apple-mobile-web-app-status-bar-style" content="black">
+     <link rel="apple-touch-startup-image" href="#">
+     <meta name="apple-mobile-web-app-capable" content="yes">
+     
+     <!-- https://ogp.me/ 참고 -->
+     <!-- SNS에서 공유 시 기본적으로 웹에 설정해줘야하는 og 메타태그 : Naver 블로그, 카카오톡 미리보기 설정 -->
+     <meta property="og:title" content="메인탬플릿02"> <!-- SNS에서 공유 시 보여주는 타이틀-->
+     <meta name="og:type" content="website">
+     <meta property="og:image" content=""> <!-- SNS에서 공유 시 보여주는 이미지 -->
+     <meta property="og:url" content=""> <!-- SNS에서 공유 시 보여주는 이미지-->
+     <meta property="og:description" content="메인탬플릿02"> <!-- SNS에서 공유 시 보여주는 설명문구 -->
+     <meta property="og:locale" content="kr-KR"> <!-- SNS에서 공유 시 언어-지역, en-US 등 두개 이상 둘 수 있음 -->
+     <meta property="og:site-name" content="메인탬플릿02">
+     <!-- 선택적 -->
+     <meta property="og:image:width" content="1066"> <!-- SNS에서 공유 시 보여주는 이미지 크기 -->
+     <meta property="og:image:height" content="558"> <!-- SNS에서 공유 시 보여주는 이미지 높이 -->
+ 
+     <!-- https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started.html 참고 -->
+     <!-- 트위터 미리보기 설정 -->
+     <!--
+     <meta name="twitter:card" content="트위터 카드 타입(요약정보, 사진, 비디오)" /> 
+     <meta name="twitter:title" content="콘텐츠 제목" /> 
+     <meta name="twitter:description" content="웹페이지 설명" /> 
+     <meta name="twitter:image" content="표시되는 이미지 " /> 
+     -->
+ 
+     <!-- 모바일 앱 미리보기 설정 모바일 앱이 존재하는 경우 앱으로 연결 시 노출 -->
+     <!--iOS-->
+     <!--
+     <meta property="al:ios:url" content=" ios 앱 URL" />
+     <meta property="al:ios:app-store-id" content="ios 앱스토어 ID" /> 
+     <meta property="al:ios:app-name" content="ios 앱 이름" /> 
+     -->
+     <!--Android-->
+     <!--
+     <meta property="al:android:url" content="안드로이드 앱 URL" />
+     <meta property="al:android:app-name" content="안드로이드 앱 이름" />
+     <meta property="al:android:package" content="안드로이드 패키지 이름" /> 
+     <meta property="al:web:url" content="안드로이드 앱 URL" />
+     -->
+ 
+ 
+    <title>정용재 포트폴리오</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/tem02.css">
+
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- google font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Francois+One&family=Noto+Serif+KR:wght@200;300;400;500;600;700&family=Playfair+Display+SC:wght@400;700;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100&display=swap" rel="stylesheet">
+
+    <!-- 프리텐다드 -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css" />
+
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/5c4a482ffe.js" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+
+    <!-- 공통 라이브러리 -->
+    <script  src="js/util.js"></script>
+    <!-- 클릭 이벤트 -->
+    <script src="js/tem02_click.js"></script>
+    <!-- 화면 인테이스 -->
+    <script src="js/tem02_draw.js"></script>
+     <!-- 상수 정의 -->
+    <script src="js/tem02_const.js"></script>
+
+    <!-- data aos -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+</head>
+<body>
+    <!-- 팝업 -->
+    <div class="popup" id="popup">
+        <div class="popup-inner" id="popup_inner">
+           
+            
+        </div>
+    </div>
+
+    <section>
+        <main class="main-visual">
+            <div class="main-vs-deco-1"></div>
+            <div class="main-vs-deco-2"></div>
+            <div class="main-vs-content">
+                <div class="main-vs-text">
+                    <div class="main-vs-text-inner">
+                        <p class="main-vs-text-inner-h1" id="typing_target">      
+                        </p>
+                        <p class="main-vs-text-inner-p">
+                            안녕하세요.<br>
+                            저의 포트폴리오에 오신것을 환영합니다. 무한한 개발의 세계에 빠져들어 끊임없이 공부하는 정용재입니다.
+                            즐거운 시간 되시길 바랍니다.
+                        </p>
+                    </div>
+                </div>
+                <div class="main-vs-banner" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="img/mani01.jpg" />
+                </div>
+            </div>
+        </main>
+
+        <!-- section01 -->
+        <div class="section01">
+            <div class="section01-img-box" data-aos="fade-right" data-aos-duration="1000">
+                <img class="section01-img-box-img first" src="img/section02_img_1.jpg" alt="">
+            </div>
+            <div class="section01-text-box" data-aos="fade-left" data-aos-duration="1000">
+                <div class="section01-text-box-inner">
+                    <h2 class="section01-text-box-inner-h2">
+                        About
+                        <span class="section01-text-box-inner-span">ME</span>
+                    </h2>
+                    <p class="section01-text-box-inner-p">
+                        <span class="section01-text-box-inner-span">이름 :</span> 정용재
+                    </p>
+                    <p class="section01-text-box-inner-p">
+                        <span class="section01-text-box-inner-span">생년월일 :</span> 1997.12.28
+                    </p>
+                    <p class="section01-text-box-inner-p">
+                        <span class="section01-text-box-inner-span">경력 :</span> 1년
+                    </p>
+                    <p class="section01-text-box-inner-p last">
+                        안녕하세요! 1년차 정용재입니다.
+                        Javascript, Jquery, HTML, CSS를 공부하며 늘 새로운 세계와 성취감과 
+                        더 많은 프레임워크에 대한 욕구가 솟아올라,
+                        최근에는 vue.js와 React를 공부중이며
+                        늘 사용자의 시선으로 바라보고
+                        함께하는 팀원, 그리고 다른 팀 팀원과 원할하게 협업하며
+                        현재에만 머물러 있지않고 더 많은 기술들로 다양한 프로젝트에 임하는 
+                        새로운것을 즐기는 그런 프론트엔드이자 퍼블리셔가 되겠습니다.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- section02 -->
+        <div class="section02">
+            <div class="section02-inner">
+                <div class="section02-inner-text">
+                    <div class="section02-inner-text-title">
+                        My 
+                        <span class="section01-text-box-inner-span">
+                            Portfolio</span>
+                    </div>
+                </div>
+                <div class="section02-inner-slide">
+                    <div class="swiper mySwiper3">
+                        <div class="swiper-wrapper swiper-wrapper-3">
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_01.jpg" alt="" data-aos="fade-up" data-aos-duration="800">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 01</h3>
+                                    <p class="slide-text-p">멘테이모 이벤트 페이지</p>
+                                    <button class="slide-text-btn view-port" data-num="1">View More</button>
+                                </div>
+                            </div>
+                            
+                          </div>
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_02.jpg" alt="" data-aos="fade-up" data-aos-duration="1000">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 02</h3>
+                                    <p class="slide-text-p">그린에어텍</p>
+                                    <button class="slide-text-btn view-port" data-num="2">View More</button>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_03.jpg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 03</h3>
+                                    <p class="slide-text-p">게시판 탬플릿</p>
+                                    <button class="slide-text-btn view-port" data-num="3">View More</button>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_05.jpg" alt="" data-aos="fade-up" data-aos-duration="1200">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 04</h3>
+                                    <p class="slide-text-p">스마트헬스케어</p>
+                                    <button class="slide-text-btn view-port" data-num="5">View More</button>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_06.jpg" alt="" data-aos="fade-up" data-aos-duration="1500">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 05</h3>
+                                    <p class="slide-text-p">JLK</p>
+                                    <button class="slide-text-btn view-port" data-num="6">View More</button>
+                                </div>
+                            </div>
+                          </div>
+                          <div class="swiper-slide swiper-slide-2">
+                            <img src="img/p_07.jpg" alt="" data-aos="fade-up" data-aos-duration="1800">
+                            <div class="overlay">
+                                <div class="slide-text">
+                                    <h3 class="slide-text-h3">Portfolio 06</h3>
+                                    <p class="slide-text-p">Vue.js 영화검색 사이트</p>
+                                    <button class="slide-text-btn view-port" data-num="7">View More</button>
+                                </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="swiper-pagination swiper-pagination2"></div>
+                      </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- section04 -->
+        <div class="section04">
+            <div class="section04-text-box">
+                <h2 class="section02-inner-text-title none-magin">My <span class="section01-text-box-inner-span">SKILLS</span> List</h2>
+            </div>
+            <div class="section04-slide-box">
+                <div class="swiper mySwiper4 swiper4">
+                    <div class="swiper-wrapper swiper-wrapper4">
+                      <div class="swiper-slide swiper-slide4">
+                        <img src="img/skill01.jpg" alt="">
+                        <div class="slide4-text">
+                            <div class="chart-do chart-do-1" 
+                            style="background: conic-gradient(rgb(229 77 38) 0%, 
+                            rgb(172, 33, 150) 95%, rgb(222, 222, 222) 95%, 
+                            rgb(222, 222, 222) 100%);"><span class="per">
+                                95%</span>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide4">
+                        <img src="img/skill02.jpg" alt="">
+                        <div class="slide4-text">
+                            <div class="chart-do chart-do-1"
+                            style="background: conic-gradient(rgb(38 78 227) 0%, 
+                            rgb(41 100 242) 95%, rgb(222, 222, 222) 95%, 
+                            rgb(222, 222, 222) 100%);">
+                            <span class="per">
+                                95%</span>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide4">
+                        <img src="img/skill03.jpg" alt="">
+                        <div class="slide4-text">
+                            <div class="chart-do chart-do-1"
+                            style="background: conic-gradient(rgb(242 191 38) 0%,
+                             rgb(242 191 38) 60%, rgb(222, 222, 222) 60%, 
+                             rgb(222, 222, 222) 100%);">
+                             <span class="per">
+                                60%</span>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide4">
+                        <img src="img/skill04.jpg" alt="">
+                        <div class="slide4-text">
+                            <div class="chart-do chart-do-1"
+                            style="background: conic-gradient(rgb(0 0 0) 0%, rgb(9 104 172) 95%,
+                              rgb(222, 222, 222) 95%, 
+                              rgb(222, 222, 222) 100%);">
+                              <span class="per">
+                                95%</span>
+                            </div>
+                        </div>
+                      </div>
+                      <div class="swiper-slide swiper-slide4">
+                        <img src="img/skill05.jpg" alt="">
+                        <div class="slide4-text">
+                            <div class="chart-do chart-do-1"
+                            style="background: conic-gradient(rgb(105 179 130) 0%,
+                             rgb(57 74 92) 30%, rgb(222, 222, 222) 30%, 
+                             rgb(222, 222, 222) 100%);">
+                              <span class="per">
+                                30%</span>
+                            </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="page-np-btn-group">
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
+            </div>
+            <div class="section04-deco"></div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer">
+            <div class="footer-inner">
+                <div class="ft-logo">
+                   <a class="ft-logo-a" href="index.html">JEONG YONG JAE</a>
+                </div>
+                <div class="ft-list">
+                    <ul class="ft-ul">
+                        <li class="ft-li-title">CONTACT ME</li>
+                        <li class="ft-li">TEL. 010-2268-0278</li>
+                        <li class="ft-li">E-MAIL. ckddnjs3698@naver.com</li>
+                    </ul>
+                   
+                </div>
+            </div>
+            <span class="ft-span">Copyrightⓒ2023 by JEONG YONG JAE. All Page content is property of JEONG YONG JAE</span>
+        </div>
+    </footer>
+
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script>
+        // aos 실행
+        AOS.init();
+        $(function(){
+            const content = "Thank You For Clicking";
+            const text = document.querySelector("#typing_target");
+            let i = 0;
+
+            function typing(){
+                if (i < content.length) {
+                let txt = content.charAt(i);
+                text.innerHTML += txt;
+                i++;
+                }
+            }
+            setInterval(typing, 200)
+        })
+       
+
+        var swiper3 = new Swiper(".mySwiper3", {
+            slidesPerView: 3,
+            spaceBetween: 30,
+            pagination: {
+                el: ".swiper-pagination2",
+                type: "progressbar",
+            },
+        });
+        var swiper4 = new Swiper(".mySwiper4", {
+            slidesPerView: 4,
+            spaceBetween: 30,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+            },
+        });
+    </script>
+</body>
+</html>
